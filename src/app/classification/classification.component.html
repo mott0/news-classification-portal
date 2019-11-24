@@ -1,0 +1,7 @@
+<div>
+    <textarea [formControl]="textControl" placeholder="Введите текст для проверки" ></textarea>
+    <button (click)="classify()" [disabled]="!canClassify()">Проверить</button>
+</div>
+<div *ngIf="newsCategory != null">
+    <strong>{{ newsCategory | newsCategoryName }}</strong>
+</div>

@@ -1,11 +1,32 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { ClassificationComponent } from 'app/classification/classification.component';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot([
+            {
+                path: '',
+                children: [
+                    {
+                        path: '',
+                        redirectTo: 'classification',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'classification',
+                        component: ClassificationComponent
+                    },
+                    {
+                        path: '**',
+                        redirectTo: 'classification',
+                        pathMatch: 'full'
+                    }
+                ]
+            }
+        ])
+    ],
+    exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }
