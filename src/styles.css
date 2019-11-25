@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    position: relative;
+}
+
+html,
+body {
+    height: 1px;
+    min-height: 100%;
+    min-width: 990px;
+    background: #FBFCFD;
+}
+
+body {
+    font-size: 16px;
+    color: #153351;
+    position: relative;
+}
+
+.container {
+    min-width: 990px !important;
+    width: 100%;
+    max-width: 990px;
+    margin: 0 auto;
+}
+

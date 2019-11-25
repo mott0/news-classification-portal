@@ -1,0 +1,34 @@
+.block {
+    margin: 20px 40px;
+    &__text {
+        text-align: center;
+        textarea {
+            width: 80%;
+            border: 1px solid #209CEE;
+            padding: 10px;
+            height: 180px;
+            margin: 10px;
+        }
+        .btn {
+            height: 44px;
+            border-radius: 100px;
+            border: none;
+            background: #209CEE;
+            color: white;
+            transition: all .4s ease;
+            padding: 0 25px;
+
+            &:hover {
+                background: lighten(#209CEE, 20%);
+                color: white;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                border: solid 1px #b5bac9;
+                background: #b5bac9;
+                pointer-events: none;
+            }
+        }
+    }
+}
