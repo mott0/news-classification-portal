@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import { NewsCategory } from 'app/http-services/classification/news-category.enum';
 import { ClassificationService } from 'app/http-services/classification/classificaton.service';

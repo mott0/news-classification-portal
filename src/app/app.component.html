@@ -1,6 +1,17 @@
-<header>
-    <nav>
-        <a href="/classification">Проверить текст</a>
-    </nav>
-</header>
-<router-outlet></router-outlet>
+<div class="app">
+    <header class="header">
+        <div class="container header__container" >
+            <div>
+                <a [routerLink]="['/classification']" class="header__item" [routerLinkActive]="['is-active']">Проверить текст</a>
+            </div>
+            <div>
+                <a [routerLink]="['/articles']" class="header__item" [routerLinkActive]="['is-active']">Просмотреть статьи</a>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

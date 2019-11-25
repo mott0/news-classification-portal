@@ -7,11 +7,13 @@ import { AppComponent } from 'app/app.component';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { ClassificationService } from 'app/http-services/classification/classificaton.service';
+import { ArticlesComponent } from 'app/articles/articles.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ClassificationComponent
+        ClassificationComponent,
+        ArticlesComponent
     ],
     imports: [
         BrowserModule,
@@ -19,7 +21,7 @@ import { ClassificationService } from 'app/http-services/classification/classifi
         HttpClientModule,
         SharedModule
     ],
-    providers: [ClassificationService],
-    bootstrap: [AppComponent]
+    providers: [ ClassificationService ],
+    bootstrap: [ AppComponent ]
 })
 export class AppModule { }
