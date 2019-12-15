@@ -1,1 +1,32 @@
-Когда-то здесь будет что-то важное и про статьи
+<div class="block">
+    <div class="filters">
+        <div class="filters__category">
+            Категория:
+            <select [formControl]="newsCategoryControl" class="select-css">
+                <option *ngFor="let category of newsCategories" [ngValue]="category.value">{{ category.name }}</option>
+            </select>
+        </div>
+        <div class="filters__info">
+            Отображаются <span>{{displayedNewsArticles.length}}</span> новостных статей (из <span>{{totalArticlesCounter}}</span>)
+        </div>
+    </div>
+    <div *ngIf="displayedNewsArticles.length > 0" class="news-block">
+        <div *ngFor="let article of displayedNewsArticles" class="news-block__item">
+            <a href="{{article.source}}" target="_blank" class="news-block__card">
+                <div class="header">
+                    <div class="news-block__category">
+                        {{ article.newsCategory | newsCategoryName }}
+                    </div>
+                    <div class="news-block__title">
+                        <h2>
+                            {{ article.title }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="news-block__text">
+                    {{ article.text }}
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

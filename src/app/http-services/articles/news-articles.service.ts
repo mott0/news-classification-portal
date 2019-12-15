@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 import { environment } from 'environments/environment';
 import { ClassificationRequest } from 'app/http-services/classification/requests/classification.request';
 import { ClassificationResponse } from 'app/http-services/classification/responses/classification.response';
+import { NewsArticlesResponse } from 'app/http-services/articles/responses/news-articles.response';
 
 @Injectable({
     providedIn: 'root'
 })
-export class ClassificationService {
+export class NewsArticlesService {
     private readonly webApiEndpoint: string;
 
     constructor(
@@ -18,7 +19,7 @@ export class ClassificationService {
         this.webApiEndpoint = environment.webApiEndpoint;
     }
 
-    public classify(request: ClassificationRequest): Observable<ClassificationResponse> {
-        return this.httpClient.post<ClassificationResponse>(this.webApiEndpoint + '/classification', request);
+    public getNewsArticles(): Observable<NewsArticlesResponse> {
+        return this.httpClient.get<NewsArticlesResponse>(this.webApiEndpoint + '/newsArticles');
     }
 }

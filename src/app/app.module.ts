@@ -8,6 +8,7 @@ import { AppRoutingModule } from 'app/app-routing.module';
 import { SharedModule } from 'app/shared/shared.module';
 import { ClassificationService } from 'app/http-services/classification/classificaton.service';
 import { ArticlesComponent } from 'app/articles/articles.component';
+import { NewsArticlesService } from 'app/http-services/articles/news-articles.service';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,10 @@ import { ArticlesComponent } from 'app/articles/articles.component';
         HttpClientModule,
         SharedModule
     ],
-    providers: [ ClassificationService ],
+    providers: [
+        ClassificationService,
+        NewsArticlesService
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }
