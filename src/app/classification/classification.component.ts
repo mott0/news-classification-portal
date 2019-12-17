@@ -31,6 +31,7 @@ export class ClassificationComponent {
         this.classificationService.classify(request)
             .subscribe(response => {
                 this.newsCategory = response.newsCategory;
-            });
+            },
+            error => console.error(error.error.message));
     }
 }

@@ -42,13 +42,6 @@ export class ArticlesComponent implements OnInit {
         this.loadData();
         this.refreshDisplayedNewsArticles();
 
-        this.router.navigate([], {
-            relativeTo: this.route,
-            queryParams: {
-                newsCategory: 'ALL'
-            }
-        });
-
         this.route.queryParams.subscribe((params: Params) => {
             const newsCategory: NewsCategory = params['newsCategory'];
             this.newsCategoryControl.setValue(newsCategory);
@@ -72,7 +65,8 @@ export class ArticlesComponent implements OnInit {
                 this._newsArticles = response.newsArticles;
                 this.totalArticlesCounter = this._newsArticles.length;
                 this.refreshDisplayedNewsArticles();
-            });
+            },
+            error => console.error(error.error.message));
     }
 
     private refreshDisplayedNewsArticles(): void {

@@ -5,7 +5,7 @@
                 <a [routerLink]="['/classification']" class="header__item" [routerLinkActive]="['is-active']">Проверить текст</a>
             </div>
             <div>
-                <a [routerLink]="['/articles']" class="header__item" [routerLinkActive]="['is-active']">Просмотреть статьи</a>
+                <a [routerLink]="['/articles']" [queryParams]="{ newsCategory: 'ALL' }" class="header__item" [routerLinkActive]="['is-active']">Просмотреть статьи</a>
             </div>
         </div>
     </header>
