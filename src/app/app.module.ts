@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { APP_BASE_HREF, HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { ClassificationComponent } from 'app/classification/classification.component';
 import { AppComponent } from 'app/app.component';
@@ -24,7 +25,9 @@ import { NewsArticlesService } from 'app/http-services/articles/news-articles.se
     ],
     providers: [
         ClassificationService,
-        NewsArticlesService
+        NewsArticlesService,
+        { provide: APP_BASE_HREF, useValue: '/' },
+        { provide: LocationStrategy, useClass: HashLocationStrategy }
     ],
     bootstrap: [ AppComponent ]
 })
